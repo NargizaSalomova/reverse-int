@@ -1,10 +1,21 @@
 module.exports = function reverse (n) {
-  let reverse = 0
+    if(n >= 0 && n <= 9){
+        return n
+    } 
 
-  while(n!=0){
-    reverse = reverse * 10 + (n % 10);
-    n = Math.floor(n/10);
-  }
-  return reverse;
+    if(n < 0){
+        let array = ('' + n).split('').map(Number);
+        let reverseNum = array.reverse();
+        reverseNum.pop()
+
+        return +reverseNum.join('');
+    }
+    
+    if(n > 10){
+        let array = ('' + n).split('').map(Number);
+        let reverseNum = array.reverse();
+
+        return +reverseNum.join('');
+    }
 }
 
